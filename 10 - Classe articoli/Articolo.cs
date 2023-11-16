@@ -61,6 +61,12 @@ namespace _10___Classe_articoli
             CartaFed = vecchioArt.CartaFed;
         }
 
+        public override string ToString()
+        {
+            string str = CartaFed ? "Abbonato" : "Non abbonato";
+            return $"Codice: {Codice}; Descrizione: {Descrizione}; Prezzo Unitario: {PrezzoUnit}; Carta Fedeltà: {str}.";
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == null || GetType() != obj.GetType())
@@ -82,7 +88,7 @@ namespace _10___Classe_articoli
         {
             if (CartaFed)
             {
-                return PrezzoUnit - (PrezzoUnit * (5 / 100));
+                return PrezzoUnit - PrezzoUnit * (5 / 100);
             }
 
             return PrezzoUnit;
