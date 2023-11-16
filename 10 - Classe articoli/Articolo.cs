@@ -8,6 +8,57 @@ namespace _10___Classe_articoli
 {
     public class Articolo
     {
+        private int _codice;
+        private string _descrizione;
+        private double _prezzoUnit;
+        private bool _cartaFed;
 
+        public int Codice
+        {
+            get { return _codice; }
+            set { _codice = _codice.GetHashCode(); }
+        }
+
+        public string Descrizione
+        {
+            get { return _descrizione; }
+            set { _descrizione = value; }
+        }
+
+        public double PrezzoUnit
+        {
+            get { return _prezzoUnit; }
+            set { _prezzoUnit = value; }
+        }
+
+        public bool CartaFed
+        {
+            get { return _cartaFed; }
+            set { _cartaFed = value; }
+        }
+
+        public Articolo()
+        {
+            Codice = 0;
+            Descrizione = "";
+            PrezzoUnit = 0;
+            CartaFed = false;
+        }
+
+        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed)
+        {
+            Codice = codice;
+            Descrizione = descrizione;
+            PrezzoUnit = prezzoUnit;
+            CartaFed = cartaFed;
+        }
+
+        public Articolo(Articolo vecchioArt)
+        {
+            Codice = vecchioArt.Codice;
+            Descrizione = vecchioArt.Descrizione;
+            PrezzoUnit = vecchioArt.PrezzoUnit;
+            CartaFed = vecchioArt.CartaFed;
+        }
     }
 }
