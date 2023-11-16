@@ -58,5 +58,39 @@ namespace _10___Classe_articoli
 
             return false;
         }
+
+        public override double Sconta()
+        {
+            // Se si considera lo sconto come: 20% statico del totale
+            // return PrezzoUnit - PrezzoUnit * (20 / 100);
+
+            // Se si considera lo sconto come: (5 + 20)% del totale
+            // return PrezzoUnit - PrezzoUnit * (25 / 100);
+
+            // Se si considera lo sconto come: 20% applicato al 5% del totale
+            // return PrezzoUnit - base.Sconta() * (20 / 100);
+
+
+            // Se ho sia la carta che la condizione dell'anno
+            if ((CartaFed && Anno == DateTime.Now.Year) && (CartaFed))
+            {
+                return PrezzoUnit - base.Sconta() * (20 / 100);
+            }
+
+            // Se ho solo la carta
+            if ((CartaFed && Anno == DateTime.Now.Year) == false && (CartaFed))
+            {
+                base.Sconta();
+            }
+            
+            // Se ho solo la condizione dell'anno
+            if (Anno == DateTime.Now.Year && CartaFed == false)
+            {
+                return PrezzoUnit - PrezzoUnit * (20 / 100);
+            }
+
+            // Se non ho nessuna delle due
+            return PrezzoUnit;
+        }
     }
 }
