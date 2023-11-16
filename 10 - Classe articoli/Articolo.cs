@@ -64,7 +64,7 @@ namespace _10___Classe_articoli
         public override string ToString()
         {
             string str = CartaFed ? "Abbonato" : "Non abbonato";
-            return $"Codice: {Codice}; Descrizione: {Descrizione}; Prezzo Unitario: {PrezzoUnit}; Carta Fedeltà: {str}.";
+            return $"Codice: {Codice}; Descrizione: {Descrizione}; Prezzo Unitario: {PrezzoUnit}; Carta Fedeltà: {str}";
         }
 
         public override bool Equals(object obj)
