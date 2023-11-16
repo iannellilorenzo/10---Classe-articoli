@@ -60,5 +60,32 @@ namespace _10___Classe_articoli
             PrezzoUnit = vecchioArt.PrezzoUnit;
             CartaFed = vecchioArt.CartaFed;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Articolo other = (Articolo)obj;
+            
+            if (Codice == other.Codice && Descrizione == other.Descrizione && PrezzoUnit == other.PrezzoUnit && CartaFed == other.CartaFed)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public virtual double Sconta()
+        {
+            if (CartaFed)
+            {
+                return PrezzoUnit - (PrezzoUnit * (5 / 100));
+            }
+
+            return PrezzoUnit;
+        }
     }
 }
