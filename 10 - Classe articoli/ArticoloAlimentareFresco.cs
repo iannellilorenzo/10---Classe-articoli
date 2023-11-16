@@ -62,5 +62,36 @@ namespace _10___Classe_articoli
 
             return false;
         }
+
+        public override double Sconta()
+        {
+            int perc = 2;
+
+            for (int i = 5; i > PrefCons; i--)
+            {
+                perc += 2;
+            }
+
+            // Se ho solo la carta
+            if (CartaFed && perc == 2)
+            {
+                return PrezzoUnit - base.Sconta() * (perc / 100);
+            }
+
+            // Se ho sia la carta che la condizione dei giorni
+            if (CartaFed && perc > 2)
+            {
+                return PrezzoUnit - base.Sconta() * (perc / 100);
+            }
+
+            // Se ho solo la condizione dei giorni
+            if (perc > 2)
+            {
+                return PrezzoUnit - PrezzoUnit * (perc / 100);
+            }
+
+            // Se non ho nessuna delle due
+            return PrezzoUnit;
+        }
     }
 }

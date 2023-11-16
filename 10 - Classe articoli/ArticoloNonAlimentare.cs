@@ -66,16 +66,6 @@ namespace _10___Classe_articoli
 
         public override double Sconta()
         {
-            // Se si considera lo sconto come: 10% statico del totale
-            // return PrezzoUnit - PrezzoUnit * (10 / 100);
-
-            // Se si considera lo sconto come: (10 + 20)% del totale
-            // return PrezzoUnit - PrezzoUnit * (30 / 100);
-
-            // Se si considera lo sconto come: 10% applicato al 5% del totale
-            // return PrezzoUnit - base.Sconta() * (10 / 100);
-
-
             // Se ho sia la carta che la condizione dell'anno
             if ((CartaFed && Riciclabile) && (CartaFed))
             {
