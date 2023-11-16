@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _10___Classe_articoli
 {
-    public class Articolo
+    public class ArticoloAlimentareFresco : ArticoloAlimentare
     {
 
     }
