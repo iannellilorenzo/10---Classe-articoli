@@ -68,7 +68,7 @@ namespace _10___Classe_articoli
             }
 
             // Se ho solo la carta
-            if ((CartaFed && Anno == DateTime.Now.Year) == false && (CartaFed))
+            if (!(Anno == DateTime.Now.Year) && (CartaFed))
             {
                 base.Sconta();
             }

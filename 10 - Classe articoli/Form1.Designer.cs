@@ -128,7 +128,7 @@
             this.Display.HideSelection = false;
             this.Display.Location = new System.Drawing.Point(822, 12);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(400, 430);
+            this.Display.Size = new System.Drawing.Size(958, 430);
             this.Display.TabIndex = 8;
             this.Display.UseCompatibleStateImageBehavior = false;
             this.Display.View = System.Windows.Forms.View.List;
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1231, 457);
+            this.ClientSize = new System.Drawing.Size(1792, 457);
             this.Controls.Add(this.ScontBut);
             this.Controls.Add(this.AggBut);
             this.Controls.Add(this.MaterialeLabel);

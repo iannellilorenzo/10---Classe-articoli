@@ -29,6 +29,12 @@ namespace _10___Classe_articoli
 
         private void AggBut_Click(object sender, EventArgs e)
         {
+            if (!ArtAlimRadio.Checked && !ArtAlimFreRadio.Checked && !ArtNAlimRadio.Checked)
+            {
+                MessageBox.Show("Selezionare una delle possibili categorie di prodotto.");
+                return;
+            }
+
             double.TryParse(PrezzoUnit.Text, out double prezzo);
 
             if (ArtAlimRadio.Checked)
@@ -58,12 +64,18 @@ namespace _10___Classe_articoli
 
         private void ScontBut_Click(object sender, EventArgs e)
         {
-            double tot = 0;
+            Display.Clear();
+
+            double tot = 0, sc = 0;
 
             for (int i = 0; i < num; i++)
             {
-                tot += articoli[i].Sconta();
+                Display.Items.Add(articoli[i].ToString());
+                sc = articoli[i].Sconta();
+                tot += sc;
             }
+
+            Display.Items.Add("\n\n" + tot.ToString());
         }
     }
 }
