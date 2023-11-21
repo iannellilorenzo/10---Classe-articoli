@@ -41,9 +41,10 @@
             this.Anno = new System.Windows.Forms.TextBox();
             this.PrefConsLabel = new System.Windows.Forms.Label();
             this.PrefCons = new System.Windows.Forms.TextBox();
-            this.Riciclabile = new System.Windows.Forms.CheckBox();
+            this.RicCheck = new System.Windows.Forms.CheckBox();
             this.MaterialeLabel = new System.Windows.Forms.Label();
             this.Materiale = new System.Windows.Forms.TextBox();
+            this.AggBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Desc
@@ -163,15 +164,15 @@
             this.PrefCons.Size = new System.Drawing.Size(117, 20);
             this.PrefCons.TabIndex = 11;
             // 
-            // Riciclabile
+            // RicCheck
             // 
-            this.Riciclabile.AutoSize = true;
-            this.Riciclabile.Location = new System.Drawing.Point(29, 178);
-            this.Riciclabile.Name = "Riciclabile";
-            this.Riciclabile.Size = new System.Drawing.Size(71, 17);
-            this.Riciclabile.TabIndex = 17;
-            this.Riciclabile.Text = "Riciclicità";
-            this.Riciclabile.UseVisualStyleBackColor = true;
+            this.RicCheck.AutoSize = true;
+            this.RicCheck.Location = new System.Drawing.Point(29, 178);
+            this.RicCheck.Name = "RicCheck";
+            this.RicCheck.Size = new System.Drawing.Size(71, 17);
+            this.RicCheck.TabIndex = 17;
+            this.RicCheck.Text = "Riciclicità";
+            this.RicCheck.UseVisualStyleBackColor = true;
             // 
             // MaterialeLabel
             // 
@@ -189,14 +190,25 @@
             this.Materiale.Size = new System.Drawing.Size(117, 20);
             this.Materiale.TabIndex = 18;
             // 
+            // AggBut
+            // 
+            this.AggBut.Location = new System.Drawing.Point(249, 131);
+            this.AggBut.Name = "AggBut";
+            this.AggBut.Size = new System.Drawing.Size(166, 64);
+            this.AggBut.TabIndex = 20;
+            this.AggBut.Text = "Aggiunta";
+            this.AggBut.UseVisualStyleBackColor = true;
+            this.AggBut.Click += new System.EventHandler(this.AggBut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1570, 457);
+            this.Controls.Add(this.AggBut);
             this.Controls.Add(this.MaterialeLabel);
             this.Controls.Add(this.Materiale);
-            this.Controls.Add(this.Riciclabile);
+            this.Controls.Add(this.RicCheck);
             this.Controls.Add(this.PrefConsLabel);
             this.Controls.Add(this.PrefCons);
             this.Controls.Add(this.AnnoLabel);
@@ -233,9 +245,10 @@
         private System.Windows.Forms.TextBox Anno;
         private System.Windows.Forms.Label PrefConsLabel;
         private System.Windows.Forms.TextBox PrefCons;
-        private System.Windows.Forms.CheckBox Riciclabile;
+        private System.Windows.Forms.CheckBox RicCheck;
         private System.Windows.Forms.Label MaterialeLabel;
         private System.Windows.Forms.TextBox Materiale;
+        private System.Windows.Forms.Button AggBut;
     }
 }
 

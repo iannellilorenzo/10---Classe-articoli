@@ -16,7 +16,7 @@ namespace _10___Classe_articoli
         public int Codice
         {
             get { return _codice; }
-            set { _codice = _codice.GetHashCode(); }
+            set { _codice = value.GetHashCode(); }
         }
 
         public string Descrizione
