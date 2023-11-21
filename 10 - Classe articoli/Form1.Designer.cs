@@ -45,6 +45,7 @@
             this.MaterialeLabel = new System.Windows.Forms.Label();
             this.Materiale = new System.Windows.Forms.TextBox();
             this.AggBut = new System.Windows.Forms.Button();
+            this.ScontBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Desc
@@ -125,7 +126,7 @@
             // Display
             // 
             this.Display.HideSelection = false;
-            this.Display.Location = new System.Drawing.Point(1158, 15);
+            this.Display.Location = new System.Drawing.Point(822, 12);
             this.Display.Name = "Display";
             this.Display.Size = new System.Drawing.Size(400, 430);
             this.Display.TabIndex = 8;
@@ -192,7 +193,7 @@
             // 
             // AggBut
             // 
-            this.AggBut.Location = new System.Drawing.Point(249, 131);
+            this.AggBut.Location = new System.Drawing.Point(216, 79);
             this.AggBut.Name = "AggBut";
             this.AggBut.Size = new System.Drawing.Size(166, 64);
             this.AggBut.TabIndex = 20;
@@ -200,11 +201,22 @@
             this.AggBut.UseVisualStyleBackColor = true;
             this.AggBut.Click += new System.EventHandler(this.AggBut_Click);
             // 
+            // ScontBut
+            // 
+            this.ScontBut.Location = new System.Drawing.Point(417, 79);
+            this.ScontBut.Name = "ScontBut";
+            this.ScontBut.Size = new System.Drawing.Size(166, 64);
+            this.ScontBut.TabIndex = 21;
+            this.ScontBut.Text = "Scontrino";
+            this.ScontBut.UseVisualStyleBackColor = true;
+            this.ScontBut.Click += new System.EventHandler(this.ScontBut_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1570, 457);
+            this.ClientSize = new System.Drawing.Size(1231, 457);
+            this.Controls.Add(this.ScontBut);
             this.Controls.Add(this.AggBut);
             this.Controls.Add(this.MaterialeLabel);
             this.Controls.Add(this.Materiale);
@@ -249,6 +261,7 @@
         private System.Windows.Forms.Label MaterialeLabel;
         private System.Windows.Forms.TextBox Materiale;
         private System.Windows.Forms.Button AggBut;
+        private System.Windows.Forms.Button ScontBut;
     }
 }
 

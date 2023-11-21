@@ -13,7 +13,8 @@ namespace _10___Classe_articoli
     public partial class Form1 : Form
     {
         public Articolo[] articoli;
-        int num;
+        public int num;
+
         public Form1()
         {
             InitializeComponent();
@@ -31,7 +32,7 @@ namespace _10___Classe_articoli
             double.TryParse(PrezzoUnit.Text, out double prezzo);
 
             if (ArtAlimRadio.Checked)
-            {
+            { 
                 int.TryParse(Anno.Text, out int date);
                 articoli[num] = new ArticoloAlimentare(date, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
@@ -52,6 +53,16 @@ namespace _10___Classe_articoli
                 articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
+            }
+        }
+
+        private void ScontBut_Click(object sender, EventArgs e)
+        {
+            double tot = 0;
+
+            for (int i = 0; i < num; i++)
+            {
+                tot += articoli[i].Sconta();
             }
         }
     }
