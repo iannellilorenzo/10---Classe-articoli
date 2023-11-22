@@ -88,7 +88,7 @@ namespace _10___Classe_articoli
         {
             if (CartaFed)
             {
-                return PrezzoUnit - PrezzoUnit * (5 / 100);
+                return PrezzoUnit - PrezzoUnit * 5 / 100;
             }
 
             return PrezzoUnit;

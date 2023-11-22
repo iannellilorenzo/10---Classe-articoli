@@ -58,7 +58,6 @@ namespace _10___Classe_articoli
             {
                 articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
-                return;
             }
         }
 
