@@ -68,23 +68,14 @@ namespace 10__Classe_articoli
         {
             double franco = base.Sconta();
 
-            // Se ho sia la carta che la condizione dell'anno
+            // Sconta ulteriormente in base a franco
             if (Riciclabile)
             {
-                return PrezzoUnit - (franco * 10F / 100F);
+                return PrezzoUnit - franco * 10F / 100F;
             }
 
-            // Se ho solo la carta
-            //return base.Sconta();
-            
-            // Se ho solo la condizione dell'anno
-            if (Riciclabile && CartaFed == false)
-            {
-                return PrezzoUnit * 0.90;
-            }
-
-            // Se non ho nessuna delle due
-            return PrezzoUnit;
+            // Se ho solo la carta o nessuna delle due
+            return franco;
         }
     }
 }

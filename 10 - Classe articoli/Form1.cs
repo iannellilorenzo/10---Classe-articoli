@@ -65,16 +65,26 @@ namespace _10___Classe_articoli
         {
             Display.Clear();
 
-            double tot = 0, sc = 0;
+            double tot = 0;
 
             for (int i = 0; i < num; i++)
             {
                 Display.Items.Add(articoli[i].ToString());
-                sc = articoli[i].Sconta();
+                double sc = articoli[i].Sconta();
                 tot += sc;
             }
 
-            Display.Items.Add("\n\n" + tot.ToString());
+            Display.Items.Add($"\n\n {tot}");
+        }
+
+        private void ClearBut_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < num; i++)
+            {
+                articoli[i] = null;
+            }
+
+            num = 0;
         }
     }
 }

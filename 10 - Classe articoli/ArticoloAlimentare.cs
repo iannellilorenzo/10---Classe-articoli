@@ -61,26 +61,16 @@ namespace _10___Classe_articoli
 
         public override double Sconta()
         {
-            // Se ho sia la carta che la condizione dell'anno
-            if ((CartaFed && Anno == DateTime.Now.Year) && (CartaFed))
-            {
-                return PrezzoUnit - base.Sconta() * (20 / 100);
-            }
+            double franco = base.Sconta();
 
-            // Se ho solo la carta
-            if (!(Anno == DateTime.Now.Year) && (CartaFed))
+            // Se ho la condizione dell'anno o sia anno che carta
+            if (Anno == DateTime.Now.Year)
             {
-                base.Sconta();
-            }
-            
-            // Se ho solo la condizione dell'anno
-            if (Anno == DateTime.Now.Year && CartaFed == false)
-            {
-                return PrezzoUnit - PrezzoUnit * (20 / 100);
+                return PrezzoUnit - franco * 20F / 100F;
             }
 
             // Se non ho nessuna delle due
-            return PrezzoUnit;
+            return franco;
         }
     }
 }

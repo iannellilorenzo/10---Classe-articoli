@@ -13,17 +13,7 @@ namespace _10___Classe_articoli
         public int PrefCons
         {
             get { return _prefCons; }
-            set
-            {
-                if (value > 5 || value < 0)
-                {
-                    _prefCons = 3;
-                }
-                else
-                {
-                    _prefCons = value;
-                }
-            }
+            set { _prefCons = value; }
         }
 
         public ArticoloAlimentareFresco() : base()
@@ -65,33 +55,15 @@ namespace _10___Classe_articoli
 
         public override double Sconta()
         {
-            int perc = 2;
+            double perc = 10F;
+            double franco = base.Sconta();
 
-            for (int i = 5; i > PrefCons; i--)
+            for (int i = 1; i < 6 && i < PrefCons; i++)
             {
-                perc += 2;
+                perc -= 2F;
             }
 
-            // Se ho solo la carta
-            if (CartaFed && perc == 2)
-            {
-                return PrezzoUnit - base.Sconta() * (perc / 100);
-            }
-
-            // Se ho sia la carta che la condizione dei giorni
-            if (CartaFed && perc > 2)
-            {
-                return PrezzoUnit - base.Sconta() * (perc / 100);
-            }
-
-            // Se ho solo la condizione dei giorni
-            if (perc > 2)
-            {
-                return PrezzoUnit - PrezzoUnit * (perc / 100);
-            }
-
-            // Se non ho nessuna delle due
-            return PrezzoUnit;
+            return franco - franco * perc / 100;
         }
     }
 }
