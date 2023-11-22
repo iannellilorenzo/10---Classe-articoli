@@ -52,7 +52,7 @@
             // Desc
             // 
             this.Desc.Location = new System.Drawing.Point(16, 38);
-            this.Desc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Desc.Margin = new System.Windows.Forms.Padding(4);
             this.Desc.Name = "Desc";
             this.Desc.Size = new System.Drawing.Size(155, 22);
             this.Desc.TabIndex = 0;
@@ -71,37 +71,40 @@
             // 
             this.ArtNAlimRadio.AutoSize = true;
             this.ArtNAlimRadio.Location = new System.Drawing.Point(39, 97);
-            this.ArtNAlimRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtNAlimRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtNAlimRadio.Name = "ArtNAlimRadio";
             this.ArtNAlimRadio.Size = new System.Drawing.Size(168, 20);
             this.ArtNAlimRadio.TabIndex = 2;
             this.ArtNAlimRadio.TabStop = true;
             this.ArtNAlimRadio.Text = "Articolo Non Alimentare";
             this.ArtNAlimRadio.UseVisualStyleBackColor = true;
+            this.ArtNAlimRadio.CheckedChanged += new System.EventHandler(this.ArtNAlimRadio_CheckedChanged);
             // 
             // ArtAlimRadio
             // 
             this.ArtAlimRadio.AutoSize = true;
             this.ArtAlimRadio.Location = new System.Drawing.Point(39, 126);
-            this.ArtAlimRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtAlimRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtAlimRadio.Name = "ArtAlimRadio";
             this.ArtAlimRadio.Size = new System.Drawing.Size(140, 20);
             this.ArtAlimRadio.TabIndex = 3;
             this.ArtAlimRadio.TabStop = true;
             this.ArtAlimRadio.Text = "Articolo Alimentare";
             this.ArtAlimRadio.UseVisualStyleBackColor = true;
+            this.ArtAlimRadio.CheckedChanged += new System.EventHandler(this.ArtAlimRadio_CheckedChanged);
             // 
             // ArtAlimFreRadio
             // 
             this.ArtAlimFreRadio.AutoSize = true;
             this.ArtAlimFreRadio.Location = new System.Drawing.Point(39, 154);
-            this.ArtAlimFreRadio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ArtAlimFreRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtAlimFreRadio.Name = "ArtAlimFreRadio";
             this.ArtAlimFreRadio.Size = new System.Drawing.Size(185, 20);
             this.ArtAlimFreRadio.TabIndex = 4;
             this.ArtAlimFreRadio.TabStop = true;
             this.ArtAlimFreRadio.Text = "Articolo Alimentare Fresco";
             this.ArtAlimFreRadio.UseVisualStyleBackColor = true;
+            this.ArtAlimFreRadio.CheckedChanged += new System.EventHandler(this.ArtAlimFreRadio_CheckedChanged);
             // 
             // PrezzoLabel
             // 
@@ -116,7 +119,7 @@
             // PrezzoUnit
             // 
             this.PrezzoUnit.Location = new System.Drawing.Point(201, 38);
-            this.PrezzoUnit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrezzoUnit.Margin = new System.Windows.Forms.Padding(4);
             this.PrezzoUnit.Name = "PrezzoUnit";
             this.PrezzoUnit.Size = new System.Drawing.Size(155, 22);
             this.PrezzoUnit.TabIndex = 5;
@@ -125,7 +128,7 @@
             // 
             this.CartaFedCheck.AutoSize = true;
             this.CartaFedCheck.Location = new System.Drawing.Point(39, 278);
-            this.CartaFedCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CartaFedCheck.Margin = new System.Windows.Forms.Padding(4);
             this.CartaFedCheck.Name = "CartaFedCheck";
             this.CartaFedCheck.Size = new System.Drawing.Size(110, 20);
             this.CartaFedCheck.TabIndex = 7;
@@ -136,7 +139,7 @@
             // 
             this.Display.HideSelection = false;
             this.Display.Location = new System.Drawing.Point(1096, 15);
-            this.Display.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Display.Margin = new System.Windows.Forms.Padding(4);
             this.Display.Name = "Display";
             this.Display.Size = new System.Drawing.Size(1276, 528);
             this.Display.TabIndex = 8;
@@ -156,7 +159,7 @@
             // Anno
             // 
             this.Anno.Location = new System.Drawing.Point(431, 38);
-            this.Anno.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Anno.Margin = new System.Windows.Forms.Padding(4);
             this.Anno.Name = "Anno";
             this.Anno.Size = new System.Drawing.Size(155, 22);
             this.Anno.TabIndex = 9;
@@ -174,7 +177,7 @@
             // PrefCons
             // 
             this.PrefCons.Location = new System.Drawing.Point(653, 38);
-            this.PrefCons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PrefCons.Margin = new System.Windows.Forms.Padding(4);
             this.PrefCons.Name = "PrefCons";
             this.PrefCons.Size = new System.Drawing.Size(155, 22);
             this.PrefCons.TabIndex = 11;
@@ -183,7 +186,7 @@
             // 
             this.RicCheck.AutoSize = true;
             this.RicCheck.Location = new System.Drawing.Point(39, 219);
-            this.RicCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RicCheck.Margin = new System.Windows.Forms.Padding(4);
             this.RicCheck.Name = "RicCheck";
             this.RicCheck.Size = new System.Drawing.Size(86, 20);
             this.RicCheck.TabIndex = 17;
@@ -203,7 +206,7 @@
             // Materiale
             // 
             this.Materiale.Location = new System.Drawing.Point(904, 38);
-            this.Materiale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Materiale.Margin = new System.Windows.Forms.Padding(4);
             this.Materiale.Name = "Materiale";
             this.Materiale.Size = new System.Drawing.Size(155, 22);
             this.Materiale.TabIndex = 18;
@@ -211,7 +214,7 @@
             // AggBut
             // 
             this.AggBut.Location = new System.Drawing.Point(288, 97);
-            this.AggBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AggBut.Margin = new System.Windows.Forms.Padding(4);
             this.AggBut.Name = "AggBut";
             this.AggBut.Size = new System.Drawing.Size(221, 79);
             this.AggBut.TabIndex = 20;
@@ -222,7 +225,7 @@
             // ScontBut
             // 
             this.ScontBut.Location = new System.Drawing.Point(556, 97);
-            this.ScontBut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ScontBut.Margin = new System.Windows.Forms.Padding(4);
             this.ScontBut.Name = "ScontBut";
             this.ScontBut.Size = new System.Drawing.Size(221, 79);
             this.ScontBut.TabIndex = 21;
@@ -265,7 +268,7 @@
             this.Controls.Add(this.ArtNAlimRadio);
             this.Controls.Add(this.DescLabel);
             this.Controls.Add(this.Desc);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
