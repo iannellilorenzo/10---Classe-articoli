@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace 10__Classe_articoli
+namespace _10___Classe_articoli
 {
     public class ArticoloNonAlimentare : Articolo
     {
