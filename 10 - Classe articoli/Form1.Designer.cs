@@ -51,6 +51,7 @@
             // 
             // Desc
             // 
+            this.Desc.Enabled = false;
             this.Desc.Location = new System.Drawing.Point(16, 38);
             this.Desc.Margin = new System.Windows.Forms.Padding(4);
             this.Desc.Name = "Desc";
@@ -118,6 +119,7 @@
             // 
             // PrezzoUnit
             // 
+            this.PrezzoUnit.Enabled = false;
             this.PrezzoUnit.Location = new System.Drawing.Point(201, 38);
             this.PrezzoUnit.Margin = new System.Windows.Forms.Padding(4);
             this.PrezzoUnit.Name = "PrezzoUnit";
@@ -127,6 +129,7 @@
             // CartaFedCheck
             // 
             this.CartaFedCheck.AutoSize = true;
+            this.CartaFedCheck.Enabled = false;
             this.CartaFedCheck.Location = new System.Drawing.Point(39, 278);
             this.CartaFedCheck.Margin = new System.Windows.Forms.Padding(4);
             this.CartaFedCheck.Name = "CartaFedCheck";
@@ -137,6 +140,7 @@
             // 
             // Display
             // 
+            this.Display.AllowDrop = true;
             this.Display.HideSelection = false;
             this.Display.Location = new System.Drawing.Point(1096, 15);
             this.Display.Margin = new System.Windows.Forms.Padding(4);
@@ -158,6 +162,7 @@
             // 
             // Anno
             // 
+            this.Anno.Enabled = false;
             this.Anno.Location = new System.Drawing.Point(431, 38);
             this.Anno.Margin = new System.Windows.Forms.Padding(4);
             this.Anno.Name = "Anno";
@@ -176,6 +181,7 @@
             // 
             // PrefCons
             // 
+            this.PrefCons.Enabled = false;
             this.PrefCons.Location = new System.Drawing.Point(653, 38);
             this.PrefCons.Margin = new System.Windows.Forms.Padding(4);
             this.PrefCons.Name = "PrefCons";
@@ -185,6 +191,7 @@
             // RicCheck
             // 
             this.RicCheck.AutoSize = true;
+            this.RicCheck.Enabled = false;
             this.RicCheck.Location = new System.Drawing.Point(39, 219);
             this.RicCheck.Margin = new System.Windows.Forms.Padding(4);
             this.RicCheck.Name = "RicCheck";
@@ -205,6 +212,7 @@
             // 
             // Materiale
             // 
+            this.Materiale.Enabled = false;
             this.Materiale.Location = new System.Drawing.Point(904, 38);
             this.Materiale.Margin = new System.Windows.Forms.Padding(4);
             this.Materiale.Name = "Materiale";

@@ -125,6 +125,8 @@ namespace _10___Classe_articoli
             {
                 Anno.Enabled = true;
                 CartaFedCheck.Enabled = true;
+                Desc.Enabled = true;
+                PrezzoUnit.Enabled = true;
 
                 PrefCons.Enabled = false;
                 Materiale.Enabled = false;
@@ -136,6 +138,8 @@ namespace _10___Classe_articoli
                 Anno.Enabled = true;
                 PrefCons.Enabled = true;
                 CartaFedCheck.Enabled = true;
+                Desc.Enabled = true;
+                PrezzoUnit.Enabled = true;
 
                 Materiale.Enabled = false;
                 RicCheck.Enabled = false;
@@ -145,7 +149,10 @@ namespace _10___Classe_articoli
             {
                 Anno.Enabled = false;
                 PrefCons.Enabled = false;
-
+                Desc.Enabled = true;
+                PrezzoUnit.Enabled = true;
+                
+                CartaFedCheck.Enabled = true;
                 Materiale.Enabled = true;
                 RicCheck.Enabled = true;
             }
