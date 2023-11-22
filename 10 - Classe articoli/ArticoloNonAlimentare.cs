@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _10___Classe_articoli
+namespace 10__Classe_articoli
 {
     public class ArticoloNonAlimentare : Articolo
     {
@@ -66,22 +66,21 @@ namespace _10___Classe_articoli
 
         public override double Sconta()
         {
+            double franco = base.Sconta();
+
             // Se ho sia la carta che la condizione dell'anno
-            if ((CartaFed && Riciclabile) && (CartaFed))
+            if (Riciclabile)
             {
-                return PrezzoUnit - base.Sconta() * (10 / 100);
+                return PrezzoUnit - (franco * 10F / 100F);
             }
 
             // Se ho solo la carta
-            if ((CartaFed && Riciclabile) == false && (CartaFed))
-            {
-                base.Sconta();
-            }
+            //return base.Sconta();
             
             // Se ho solo la condizione dell'anno
             if (Riciclabile && CartaFed == false)
             {
-                return PrezzoUnit - PrezzoUnit * (10 / 100);
+                return PrezzoUnit * 0.90;
             }
 
             // Se non ho nessuna delle due
