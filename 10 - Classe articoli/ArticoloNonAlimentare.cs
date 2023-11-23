@@ -29,7 +29,7 @@ namespace _10___Classe_articoli
             Riciclabile = false;
         }
 
-        public ArticoloNonAlimentare(string materiale, bool riciclabile, int codice, string descrizione, double prezzoUnit, bool cartaFed) : base(codice, descrizione, prezzoUnit, cartaFed)
+        public ArticoloNonAlimentare(string materiale, bool riciclabile, string descrizione, double prezzoUnit, bool cartaFed) : base(descrizione, prezzoUnit, cartaFed)
         {
             Materiale = materiale;
             Riciclabile = riciclabile;

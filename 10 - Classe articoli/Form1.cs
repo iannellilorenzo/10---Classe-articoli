@@ -55,7 +55,7 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloAlimentare(date, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloAlimentare(date, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
             }
@@ -75,7 +75,7 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloAlimentareFresco(days, date, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloAlimentareFresco(days, date, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
             }
@@ -88,7 +88,7 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
             }
         }
