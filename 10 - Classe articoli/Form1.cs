@@ -48,6 +48,12 @@ namespace _10___Classe_articoli
                 return;
             }
 
+            if (!double.TryParse(PrezzoUnit.Text, out double prezzo) || PrezzoUnit.Text == "0" || prezzo < 0 || String.IsNullOrEmpty(PrezzoUnit.Text))
+            {
+                MessageBox.Show("Inserire un prezzo valido.");
+                return;
+            }
+
             if (ArtAlimRadio.Checked)
             {
                 if (!int.TryParse(Anno.Text, out int date) || String.IsNullOrEmpty(Anno.Text) || date < DateTime.Now.Year)
