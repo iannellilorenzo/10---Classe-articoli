@@ -40,7 +40,7 @@ namespace _10___Classe_articoli
             if (ArtAlimRadio.Checked)
             { 
                 int.TryParse(Anno.Text, out int date);
-                articoli[num] = new ArticoloAlimentare(date, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloAlimentare(date, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
             }
@@ -49,14 +49,14 @@ namespace _10___Classe_articoli
             {
                 int.TryParse(Anno.Text, out int date);
                 int.TryParse(PrefCons.Text, out int days);
-                articoli[num] = new ArticoloAlimentareFresco(days, date, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloAlimentareFresco(days, date, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
             }
 
             if (ArtNAlimRadio.Checked)
             {
-                articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, 0, Desc.Text, prezzo, CartaFedCheck.Checked);
+                articoli[num] = new ArticoloNonAlimentare(Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked);
                 num++;
                 return;
             }

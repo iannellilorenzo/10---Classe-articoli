@@ -27,7 +27,7 @@ namespace _10___Classe_articoli
             Anno = DateTime.Now.Year + 2;
         }
 
-        public ArticoloAlimentare(int anno, int codice, string descrizione, double prezzoUnit, bool cartaFed) : base(codice, descrizione, prezzoUnit, cartaFed)
+        public ArticoloAlimentare(int anno, string descrizione, double prezzoUnit, bool cartaFed) : base(descrizione, prezzoUnit, cartaFed)
         {
             Anno = anno;
         }

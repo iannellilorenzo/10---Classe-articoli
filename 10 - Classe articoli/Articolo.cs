@@ -8,7 +8,7 @@ namespace _10___Classe_articoli
 {
     public class Articolo
     {
-        private int _codice;
+        private static int _codice = 0;
         private string _descrizione;
         private double _prezzoUnit;
         private bool _cartaFed;
@@ -16,7 +16,7 @@ namespace _10___Classe_articoli
         public int Codice
         {
             get { return _codice; }
-            set { _codice = value.GetHashCode(); }
+            set { _codice++; }
         }
 
         public string Descrizione
@@ -39,15 +39,13 @@ namespace _10___Classe_articoli
 
         public Articolo()
         {
-            Codice = 0;
             Descrizione = "";
             PrezzoUnit = 0;
             CartaFed = false;
         }
 
-        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed)
+        public Articolo(string descrizione, double prezzoUnit, bool cartaFed)
         {
-            Codice = codice;
             Descrizione = descrizione;
             PrezzoUnit = prezzoUnit;
             CartaFed = cartaFed;
