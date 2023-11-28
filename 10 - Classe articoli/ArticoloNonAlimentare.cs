@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,7 +29,7 @@ namespace _10___Classe_articoli
             Riciclabile = false;
         }
 
-        public ArticoloNonAlimentare(string materiale, bool riciclabile, string descrizione, double prezzoUnit, bool cartaFed) : base(descrizione, prezzoUnit, cartaFed)
+        public ArticoloNonAlimentare(int codice, string materiale, bool riciclabile, string descrizione, double prezzoUnit, bool cartaFed) : base(codice, descrizione, prezzoUnit, cartaFed)
         {
             Materiale = materiale;
             Riciclabile = riciclabile;
@@ -66,26 +66,16 @@ namespace _10___Classe_articoli
 
         public override double Sconta()
         {
-            // Se ho sia la carta che la condizione dell'anno
-            if ((CartaFed && Riciclabile) && (CartaFed))
+            double franco = base.Sconta();
+
+            // Sconta ulteriormente in base a franco
+            if (Riciclabile)
             {
-                return PrezzoUnit - base.Sconta() * (10 / 100);
+                return PrezzoUnit - franco * 10F / 100F;
             }
 
-            // Se ho solo la carta
-            if ((CartaFed && Riciclabile) == false && (CartaFed))
-            {
-                base.Sconta();
-            }
-            
-            // Se ho solo la condizione dell'anno
-            if (Riciclabile && CartaFed == false)
-            {
-                return PrezzoUnit - PrezzoUnit * (10 / 100);
-            }
-
-            // Se non ho nessuna delle due
-            return PrezzoUnit;
+            // Se ho solo la carta o nessuna delle due
+            return franco;
         }
     }
 }

@@ -46,89 +46,106 @@
             this.Materiale = new System.Windows.Forms.TextBox();
             this.AggBut = new System.Windows.Forms.Button();
             this.ScontBut = new System.Windows.Forms.Button();
+            this.ClearBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Desc
             // 
-            this.Desc.Location = new System.Drawing.Point(12, 31);
+            this.Desc.Enabled = false;
+            this.Desc.Location = new System.Drawing.Point(16, 38);
+            this.Desc.Margin = new System.Windows.Forms.Padding(4);
             this.Desc.Name = "Desc";
-            this.Desc.Size = new System.Drawing.Size(117, 20);
+            this.Desc.Size = new System.Drawing.Size(155, 22);
             this.Desc.TabIndex = 0;
             // 
             // DescLabel
             // 
             this.DescLabel.AutoSize = true;
-            this.DescLabel.Location = new System.Drawing.Point(12, 15);
+            this.DescLabel.Location = new System.Drawing.Point(16, 18);
+            this.DescLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.DescLabel.Name = "DescLabel";
-            this.DescLabel.Size = new System.Drawing.Size(100, 13);
+            this.DescLabel.Size = new System.Drawing.Size(127, 16);
             this.DescLabel.TabIndex = 1;
             this.DescLabel.Text = "Nome e descrizione";
             // 
             // ArtNAlimRadio
             // 
             this.ArtNAlimRadio.AutoSize = true;
-            this.ArtNAlimRadio.Location = new System.Drawing.Point(29, 79);
+            this.ArtNAlimRadio.Location = new System.Drawing.Point(39, 97);
+            this.ArtNAlimRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtNAlimRadio.Name = "ArtNAlimRadio";
-            this.ArtNAlimRadio.Size = new System.Drawing.Size(135, 17);
+            this.ArtNAlimRadio.Size = new System.Drawing.Size(168, 20);
             this.ArtNAlimRadio.TabIndex = 2;
             this.ArtNAlimRadio.TabStop = true;
             this.ArtNAlimRadio.Text = "Articolo Non Alimentare";
             this.ArtNAlimRadio.UseVisualStyleBackColor = true;
+            this.ArtNAlimRadio.CheckedChanged += new System.EventHandler(this.ArtNAlimRadio_CheckedChanged);
             // 
             // ArtAlimRadio
             // 
             this.ArtAlimRadio.AutoSize = true;
-            this.ArtAlimRadio.Location = new System.Drawing.Point(29, 102);
+            this.ArtAlimRadio.Location = new System.Drawing.Point(39, 126);
+            this.ArtAlimRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtAlimRadio.Name = "ArtAlimRadio";
-            this.ArtAlimRadio.Size = new System.Drawing.Size(112, 17);
+            this.ArtAlimRadio.Size = new System.Drawing.Size(140, 20);
             this.ArtAlimRadio.TabIndex = 3;
             this.ArtAlimRadio.TabStop = true;
             this.ArtAlimRadio.Text = "Articolo Alimentare";
             this.ArtAlimRadio.UseVisualStyleBackColor = true;
+            this.ArtAlimRadio.CheckedChanged += new System.EventHandler(this.ArtAlimRadio_CheckedChanged);
             // 
             // ArtAlimFreRadio
             // 
             this.ArtAlimFreRadio.AutoSize = true;
-            this.ArtAlimFreRadio.Location = new System.Drawing.Point(29, 125);
+            this.ArtAlimFreRadio.Location = new System.Drawing.Point(39, 154);
+            this.ArtAlimFreRadio.Margin = new System.Windows.Forms.Padding(4);
             this.ArtAlimFreRadio.Name = "ArtAlimFreRadio";
-            this.ArtAlimFreRadio.Size = new System.Drawing.Size(147, 17);
+            this.ArtAlimFreRadio.Size = new System.Drawing.Size(185, 20);
             this.ArtAlimFreRadio.TabIndex = 4;
             this.ArtAlimFreRadio.TabStop = true;
             this.ArtAlimFreRadio.Text = "Articolo Alimentare Fresco";
             this.ArtAlimFreRadio.UseVisualStyleBackColor = true;
+            this.ArtAlimFreRadio.CheckedChanged += new System.EventHandler(this.ArtAlimFreRadio_CheckedChanged);
             // 
             // PrezzoLabel
             // 
             this.PrezzoLabel.AutoSize = true;
-            this.PrezzoLabel.Location = new System.Drawing.Point(151, 15);
+            this.PrezzoLabel.Location = new System.Drawing.Point(201, 18);
+            this.PrezzoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PrezzoLabel.Name = "PrezzoLabel";
-            this.PrezzoLabel.Size = new System.Drawing.Size(77, 13);
+            this.PrezzoLabel.Size = new System.Drawing.Size(96, 16);
             this.PrezzoLabel.TabIndex = 6;
             this.PrezzoLabel.Text = "Prezzo all\'unità";
             // 
             // PrezzoUnit
             // 
-            this.PrezzoUnit.Location = new System.Drawing.Point(151, 31);
+            this.PrezzoUnit.Enabled = false;
+            this.PrezzoUnit.Location = new System.Drawing.Point(201, 38);
+            this.PrezzoUnit.Margin = new System.Windows.Forms.Padding(4);
             this.PrezzoUnit.Name = "PrezzoUnit";
-            this.PrezzoUnit.Size = new System.Drawing.Size(117, 20);
+            this.PrezzoUnit.Size = new System.Drawing.Size(155, 22);
             this.PrezzoUnit.TabIndex = 5;
             // 
             // CartaFedCheck
             // 
             this.CartaFedCheck.AutoSize = true;
-            this.CartaFedCheck.Location = new System.Drawing.Point(29, 226);
+            this.CartaFedCheck.Enabled = false;
+            this.CartaFedCheck.Location = new System.Drawing.Point(39, 278);
+            this.CartaFedCheck.Margin = new System.Windows.Forms.Padding(4);
             this.CartaFedCheck.Name = "CartaFedCheck";
-            this.CartaFedCheck.Size = new System.Drawing.Size(89, 17);
+            this.CartaFedCheck.Size = new System.Drawing.Size(110, 20);
             this.CartaFedCheck.TabIndex = 7;
             this.CartaFedCheck.Text = "Carta Fedeltà";
             this.CartaFedCheck.UseVisualStyleBackColor = true;
             // 
             // Display
             // 
+            this.Display.AllowDrop = true;
             this.Display.HideSelection = false;
-            this.Display.Location = new System.Drawing.Point(822, 12);
+            this.Display.Location = new System.Drawing.Point(1096, 15);
+            this.Display.Margin = new System.Windows.Forms.Padding(4);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(958, 430);
+            this.Display.Size = new System.Drawing.Size(1276, 528);
             this.Display.TabIndex = 8;
             this.Display.UseCompatibleStateImageBehavior = false;
             this.Display.View = System.Windows.Forms.View.List;
@@ -136,41 +153,49 @@
             // AnnoLabel
             // 
             this.AnnoLabel.AutoSize = true;
-            this.AnnoLabel.Location = new System.Drawing.Point(323, 15);
+            this.AnnoLabel.Location = new System.Drawing.Point(431, 18);
+            this.AnnoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AnnoLabel.Name = "AnnoLabel";
-            this.AnnoLabel.Size = new System.Drawing.Size(92, 13);
+            this.AnnoLabel.Size = new System.Drawing.Size(114, 16);
             this.AnnoLabel.TabIndex = 10;
             this.AnnoLabel.Text = "Anno di scadenza";
             // 
             // Anno
             // 
-            this.Anno.Location = new System.Drawing.Point(323, 31);
+            this.Anno.Enabled = false;
+            this.Anno.Location = new System.Drawing.Point(431, 38);
+            this.Anno.Margin = new System.Windows.Forms.Padding(4);
             this.Anno.Name = "Anno";
-            this.Anno.Size = new System.Drawing.Size(117, 20);
+            this.Anno.Size = new System.Drawing.Size(155, 22);
             this.Anno.TabIndex = 9;
             // 
             // PrefConsLabel
             // 
             this.PrefConsLabel.AutoSize = true;
-            this.PrefConsLabel.Location = new System.Drawing.Point(490, 15);
+            this.PrefConsLabel.Location = new System.Drawing.Point(653, 18);
+            this.PrefConsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.PrefConsLabel.Name = "PrefConsLabel";
-            this.PrefConsLabel.Size = new System.Drawing.Size(107, 13);
+            this.PrefConsLabel.Size = new System.Drawing.Size(133, 16);
             this.PrefConsLabel.TabIndex = 12;
             this.PrefConsLabel.Text = "Da consumarsi entro:";
             // 
             // PrefCons
             // 
-            this.PrefCons.Location = new System.Drawing.Point(490, 31);
+            this.PrefCons.Enabled = false;
+            this.PrefCons.Location = new System.Drawing.Point(653, 38);
+            this.PrefCons.Margin = new System.Windows.Forms.Padding(4);
             this.PrefCons.Name = "PrefCons";
-            this.PrefCons.Size = new System.Drawing.Size(117, 20);
+            this.PrefCons.Size = new System.Drawing.Size(155, 22);
             this.PrefCons.TabIndex = 11;
             // 
             // RicCheck
             // 
             this.RicCheck.AutoSize = true;
-            this.RicCheck.Location = new System.Drawing.Point(29, 178);
+            this.RicCheck.Enabled = false;
+            this.RicCheck.Location = new System.Drawing.Point(39, 219);
+            this.RicCheck.Margin = new System.Windows.Forms.Padding(4);
             this.RicCheck.Name = "RicCheck";
-            this.RicCheck.Size = new System.Drawing.Size(71, 17);
+            this.RicCheck.Size = new System.Drawing.Size(86, 20);
             this.RicCheck.TabIndex = 17;
             this.RicCheck.Text = "Riciclicità";
             this.RicCheck.UseVisualStyleBackColor = true;
@@ -178,24 +203,28 @@
             // MaterialeLabel
             // 
             this.MaterialeLabel.AutoSize = true;
-            this.MaterialeLabel.Location = new System.Drawing.Point(678, 15);
+            this.MaterialeLabel.Location = new System.Drawing.Point(904, 18);
+            this.MaterialeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.MaterialeLabel.Name = "MaterialeLabel";
-            this.MaterialeLabel.Size = new System.Drawing.Size(50, 13);
+            this.MaterialeLabel.Size = new System.Drawing.Size(63, 16);
             this.MaterialeLabel.TabIndex = 19;
             this.MaterialeLabel.Text = "Materiale";
             // 
             // Materiale
             // 
-            this.Materiale.Location = new System.Drawing.Point(678, 31);
+            this.Materiale.Enabled = false;
+            this.Materiale.Location = new System.Drawing.Point(904, 38);
+            this.Materiale.Margin = new System.Windows.Forms.Padding(4);
             this.Materiale.Name = "Materiale";
-            this.Materiale.Size = new System.Drawing.Size(117, 20);
+            this.Materiale.Size = new System.Drawing.Size(155, 22);
             this.Materiale.TabIndex = 18;
             // 
             // AggBut
             // 
-            this.AggBut.Location = new System.Drawing.Point(216, 79);
+            this.AggBut.Location = new System.Drawing.Point(288, 97);
+            this.AggBut.Margin = new System.Windows.Forms.Padding(4);
             this.AggBut.Name = "AggBut";
-            this.AggBut.Size = new System.Drawing.Size(166, 64);
+            this.AggBut.Size = new System.Drawing.Size(221, 79);
             this.AggBut.TabIndex = 20;
             this.AggBut.Text = "Aggiunta";
             this.AggBut.UseVisualStyleBackColor = true;
@@ -203,19 +232,32 @@
             // 
             // ScontBut
             // 
-            this.ScontBut.Location = new System.Drawing.Point(417, 79);
+            this.ScontBut.Location = new System.Drawing.Point(556, 97);
+            this.ScontBut.Margin = new System.Windows.Forms.Padding(4);
             this.ScontBut.Name = "ScontBut";
-            this.ScontBut.Size = new System.Drawing.Size(166, 64);
+            this.ScontBut.Size = new System.Drawing.Size(221, 79);
             this.ScontBut.TabIndex = 21;
             this.ScontBut.Text = "Scontrino";
             this.ScontBut.UseVisualStyleBackColor = true;
             this.ScontBut.Click += new System.EventHandler(this.ScontBut_Click);
             // 
+            // ClearBut
+            // 
+            this.ClearBut.Location = new System.Drawing.Point(418, 189);
+            this.ClearBut.Margin = new System.Windows.Forms.Padding(4);
+            this.ClearBut.Name = "ClearBut";
+            this.ClearBut.Size = new System.Drawing.Size(221, 79);
+            this.ClearBut.TabIndex = 22;
+            this.ClearBut.Text = "Pulisci scontrino";
+            this.ClearBut.UseVisualStyleBackColor = true;
+            this.ClearBut.Click += new System.EventHandler(this.ClearBut_Click);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1792, 457);
+            this.ClientSize = new System.Drawing.Size(1924, 562);
+            this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.ScontBut);
             this.Controls.Add(this.AggBut);
             this.Controls.Add(this.MaterialeLabel);
@@ -234,6 +276,7 @@
             this.Controls.Add(this.ArtNAlimRadio);
             this.Controls.Add(this.DescLabel);
             this.Controls.Add(this.Desc);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -262,6 +305,7 @@
         private System.Windows.Forms.TextBox Materiale;
         private System.Windows.Forms.Button AggBut;
         private System.Windows.Forms.Button ScontBut;
+        private System.Windows.Forms.Button ClearBut;
     }
 }
 

@@ -8,7 +8,7 @@ namespace _10___Classe_articoli
 {
     public class Articolo
     {
-        private static int _codice = 0;
+        private int _codice = 0;
         private string _descrizione;
         private double _prezzoUnit;
         private bool _cartaFed;
@@ -39,13 +39,15 @@ namespace _10___Classe_articoli
 
         public Articolo()
         {
+            Codice = 0;
             Descrizione = "";
             PrezzoUnit = 0;
             CartaFed = false;
         }
 
-        public Articolo(string descrizione, double prezzoUnit, bool cartaFed)
+        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed)
         {
+            Codice = codice;
             Descrizione = descrizione;
             PrezzoUnit = prezzoUnit;
             CartaFed = cartaFed;
@@ -86,7 +88,7 @@ namespace _10___Classe_articoli
         {
             if (CartaFed)
             {
-                return PrezzoUnit - PrezzoUnit * (5 / 100);
+                return PrezzoUnit - PrezzoUnit * 5 / 100;
             }
 
             return PrezzoUnit;
