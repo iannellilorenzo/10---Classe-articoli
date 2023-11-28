@@ -121,9 +121,9 @@ namespace _10___Classe_articoli
             int i = 0, j = 0;
             Articolo temp = null;
 
-            while (toSort[i] != null)
+            while (toSort[i + 1] != null)
             {
-                while (toSort[j] != null)
+                while (toSort[j + 1] != null)
                 {
                     if (toSort[j + 1].Compare(toSort[j]) == 1)
                     { 

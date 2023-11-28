@@ -114,12 +114,12 @@ namespace _10___Classe_articoli
 
         private void ClearBut_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < num; i++)
+            for (int i = 1; i < num; i++)
             {
                 articoli[i] = null;
             }
 
-            num = 0;
+            num = 1;
         }
 
         private void ArtAlimRadio_CheckedChanged(object sender, EventArgs e)
