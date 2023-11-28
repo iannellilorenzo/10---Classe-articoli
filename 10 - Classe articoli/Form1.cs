@@ -109,7 +109,7 @@ namespace _10___Classe_articoli
                 tot += sc;
             }
 
-            Display.Items.Add($"\n\n {tot}");
+            Display.Items.Add($"\n\nPrezzo totale: {tot}");
         }
 
         private void ClearBut_Click(object sender, EventArgs e)
@@ -173,7 +173,12 @@ namespace _10___Classe_articoli
 
         private void OrdBut_Click(object sender, EventArgs e)
         {
+            articoli = Articolo.Sort(articoli);
 
+            for (int i = 1; i < num; i++)
+            {
+                Display.Items.Add(articoli[i].ToString());
+            }
         }
     }
 }

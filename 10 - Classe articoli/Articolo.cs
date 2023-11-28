@@ -116,20 +116,20 @@ namespace _10___Classe_articoli
             return PrezzoUnit;
         }
 
-        public void Sort(Articolo[] articoli)
+        public static Articolo[] Sort(Articolo[] toSort)
         {
             int i = 0, j = 0;
             Articolo temp = null;
 
-            while (articoli[i] != null)
+            while (toSort[i] != null)
             {
-                while (articoli[j] != null)
+                while (toSort[j] != null)
                 {
-                    if (articoli[j + 1].Compare(articoli[j]) == 1)
+                    if (toSort[j + 1].Compare(toSort[j]) == 1)
                     { 
-                        temp = articoli[j];
-                        articoli[j] = articoli[j + 1];
-                        articoli[j + 1] = temp;
+                        temp = toSort[j];
+                        toSort[j] = toSort[j + 1];
+                        toSort[j + 1] = temp;
                     }
 
                     j++;
@@ -138,6 +138,8 @@ namespace _10___Classe_articoli
                 j = 0;
                 i++;
             }
+
+            return toSort;
         }
     }
 }
