@@ -90,6 +90,22 @@ namespace _10___Classe_articoli
             return false;
         }
 
+        public int Compare(Articolo other)
+        {
+            int ret = 0;
+
+            if (PrezzoUnit > other.PrezzoUnit)
+            {
+                ret = 1;
+            }
+            else if (PrezzoUnit < other.PrezzoUnit)
+            {
+                ret = -1;
+            }
+
+            return ret;
+        }
+
         public virtual double Sconta()
         {
             if (CartaFed)
@@ -98,6 +114,30 @@ namespace _10___Classe_articoli
             }
 
             return PrezzoUnit;
+        }
+
+        public void Sort(Articolo[] articoli)
+        {
+            int i = 0, j = 0;
+            Articolo temp = null;
+
+            while (articoli[i] != null)
+            {
+                while (articoli[j] != null)
+                {
+                    if (articoli[j + 1].Compare(articoli[j]) == 1)
+                    { 
+                        temp = articoli[j];
+                        articoli[j] = articoli[j + 1];
+                        articoli[j + 1] = temp;
+                    }
+
+                    j++;
+                }
+
+                j = 0;
+                i++;
+            }
         }
     }
 }
