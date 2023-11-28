@@ -13,7 +13,13 @@ namespace _10___Classe_articoli
         public int PrefCons
         {
             get { return _prefCons; }
-            set { _prefCons = value; }
+            set 
+            {
+                if (value > 0)
+                    _prefCons = value;
+                else
+                    _prefCons = 0;
+            }
         }
 
         public ArticoloAlimentareFresco() : base()

@@ -16,7 +16,7 @@ namespace _10___Classe_articoli
         public int Codice
         {
             get { return _codice; }
-            set { _codice++; }
+            set { _codice = value / 86438; }
         }
 
         public string Descrizione
@@ -28,7 +28,13 @@ namespace _10___Classe_articoli
         public double PrezzoUnit
         {
             get { return _prezzoUnit; }
-            set { _prezzoUnit = value; }
+            set
+            {
+                if (value > 0)
+                    _prezzoUnit = value;
+                else
+                    _prezzoUnit = 100; // throw new ArgumentOutOfRangeException("value", "Sono accettati valori interi maggiori di 0.");
+            }
         }
 
         public bool CartaFed
