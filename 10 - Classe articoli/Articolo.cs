@@ -45,9 +45,9 @@ namespace _10___Classe_articoli
             CartaFed = false;
         }
 
-        public Articolo(string descrizione, double prezzoUnit, bool cartaFed)
+        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed)
         {
-            Codice += 1;
+            Codice = codice;
             Descrizione = descrizione;
             PrezzoUnit = prezzoUnit;
             CartaFed = cartaFed;
