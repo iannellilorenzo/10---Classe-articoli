@@ -134,10 +134,11 @@
             // Display
             // 
             this.Display.AllowDrop = true;
+            this.Display.Font = new System.Drawing.Font("Consolas", 8.25F);
             this.Display.HideSelection = false;
             this.Display.Location = new System.Drawing.Point(822, 12);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(958, 430);
+            this.Display.Size = new System.Drawing.Size(938, 430);
             this.Display.TabIndex = 8;
             this.Display.UseCompatibleStateImageBehavior = false;
             this.Display.View = System.Windows.Forms.View.List;
@@ -210,23 +211,23 @@
             this.AggBut.Name = "AggBut";
             this.AggBut.Size = new System.Drawing.Size(166, 64);
             this.AggBut.TabIndex = 20;
-            this.AggBut.Text = "Aggiunta";
+            this.AggBut.Text = "Aggiunta articolo";
             this.AggBut.UseVisualStyleBackColor = true;
             this.AggBut.Click += new System.EventHandler(this.AggBut_Click);
             // 
             // ScontBut
             // 
-            this.ScontBut.Location = new System.Drawing.Point(417, 79);
+            this.ScontBut.Location = new System.Drawing.Point(401, 78);
             this.ScontBut.Name = "ScontBut";
             this.ScontBut.Size = new System.Drawing.Size(166, 64);
             this.ScontBut.TabIndex = 21;
-            this.ScontBut.Text = "Scontrino";
+            this.ScontBut.Text = "Genera scontrino";
             this.ScontBut.UseVisualStyleBackColor = true;
             this.ScontBut.Click += new System.EventHandler(this.ScontBut_Click);
             // 
             // ClearBut
             // 
-            this.ClearBut.Location = new System.Drawing.Point(314, 154);
+            this.ClearBut.Location = new System.Drawing.Point(216, 149);
             this.ClearBut.Name = "ClearBut";
             this.ClearBut.Size = new System.Drawing.Size(166, 64);
             this.ClearBut.TabIndex = 22;
@@ -236,11 +237,11 @@
             // 
             // OrdBut
             // 
-            this.OrdBut.Location = new System.Drawing.Point(154, 323);
+            this.OrdBut.Location = new System.Drawing.Point(401, 148);
             this.OrdBut.Name = "OrdBut";
-            this.OrdBut.Size = new System.Drawing.Size(166, 64);
+            this.OrdBut.Size = new System.Drawing.Size(166, 63);
             this.OrdBut.TabIndex = 23;
-            this.OrdBut.Text = "Ordina";
+            this.OrdBut.Text = "Ordina crescente";
             this.OrdBut.UseVisualStyleBackColor = true;
             this.OrdBut.Click += new System.EventHandler(this.OrdBut_Click);
             // 
@@ -248,7 +249,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1443, 457);
+            this.ClientSize = new System.Drawing.Size(1772, 457);
             this.Controls.Add(this.OrdBut);
             this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.ScontBut);

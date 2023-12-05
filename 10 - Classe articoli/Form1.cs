@@ -99,17 +99,8 @@ namespace _10___Classe_articoli
         private void ScontBut_Click(object sender, EventArgs e)
         {
             Display.Clear();
-
-            double tot = 0;
-
-            for (int i = 1; i < num; i++)
-            {
-                Display.Items.Add(articoli[i].ToString());
-                double sc = articoli[i].Sconta();
-                tot += sc;
-            }
-
-            Display.Items.Add($"\n\nPrezzo totale: {tot}");
+            Stampa();
+            Display.Items.Add($"Il prezzo totale è: €{Scontrino()}");
         }
 
         private void ClearBut_Click(object sender, EventArgs e)
@@ -175,11 +166,28 @@ namespace _10___Classe_articoli
         {
             Display.Clear();
             Sort(articoli, 1, num - 1);
+            Stampa();
+            Display.Items.Add($"Il prezzo totale è: €{Scontrino()}");
+        }
 
+        public void Stampa()
+        {
             for (int i = 1; i < num; i++)
             {
                 Display.Items.Add(articoli[i].ToString());
             }
+        }
+
+        public double Scontrino()
+        {
+            double tot = 0;
+
+            for (int i = 1; i < num; i++)
+            {
+                tot += articoli[i].Sconta();
+            }
+
+            return tot;
         }
 
         public void Sort(Articolo[] articoli, int leftIndex, int rightIndex)
@@ -187,6 +195,7 @@ namespace _10___Classe_articoli
             var i = leftIndex;
             var j = rightIndex;
             var pivot = articoli[leftIndex].PrezzoUnit;
+
             while (i <= j)
             {
                 while (articoli[i].PrezzoUnit < pivot)
@@ -198,11 +207,12 @@ namespace _10___Classe_articoli
                 {
                     j--;
                 }
+
                 if (i <= j)
                 {
-                    double temp = articoli[i].PrezzoUnit;
+                    Articolo temp = articoli[i];
                     articoli[i] = articoli[j];
-                    articoli[j].PrezzoUnit = temp;
+                    articoli[j] = temp;
                     i++;
                     j--;
                 }
