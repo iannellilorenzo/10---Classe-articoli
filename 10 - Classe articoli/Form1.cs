@@ -173,12 +173,45 @@ namespace _10___Classe_articoli
 
         private void OrdBut_Click(object sender, EventArgs e)
         {
-            articoli = Articolo.Sort(articoli);
+            Display.Clear();
+            Sort(articoli, 1, num - 1);
 
             for (int i = 1; i < num; i++)
             {
                 Display.Items.Add(articoli[i].ToString());
             }
+        }
+
+        public void Sort(Articolo[] articoli, int leftIndex, int rightIndex)
+        {
+            var i = leftIndex;
+            var j = rightIndex;
+            var pivot = articoli[leftIndex].PrezzoUnit;
+            while (i <= j)
+            {
+                while (articoli[i].PrezzoUnit < pivot)
+                {
+                    i++;
+                }
+
+                while (articoli[j].PrezzoUnit > pivot)
+                {
+                    j--;
+                }
+                if (i <= j)
+                {
+                    double temp = articoli[i].PrezzoUnit;
+                    articoli[i] = articoli[j];
+                    articoli[j].PrezzoUnit = temp;
+                    i++;
+                    j--;
+                }
+            }
+
+            if (leftIndex < j)
+                Sort(articoli, leftIndex, j);
+            if (i < rightIndex)
+                Sort(articoli, i, rightIndex);
         }
     }
 }

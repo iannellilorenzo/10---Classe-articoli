@@ -92,17 +92,16 @@ namespace _10___Classe_articoli
 
         public int Compare(Articolo other)
         {
-            int ret = 0;
-
-            if (PrezzoUnit > other.PrezzoUnit)
+            int ret = 2;
+            if (other != null)
             {
-                ret = 1;
+                if (PrezzoUnit == other.PrezzoUnit)
+                    ret = -1;
+                else if (PrezzoUnit > other.PrezzoUnit)
+                    ret = 0;
+                else if (PrezzoUnit < other.PrezzoUnit)
+                    ret = 1;
             }
-            else if (PrezzoUnit < other.PrezzoUnit)
-            {
-                ret = -1;
-            }
-
             return ret;
         }
 
@@ -114,32 +113,6 @@ namespace _10___Classe_articoli
             }
 
             return PrezzoUnit;
-        }
-
-        public static Articolo[] Sort(Articolo[] toSort)
-        {
-            int i = 0, j = 0;
-            Articolo temp = null;
-
-            while (toSort[i + 1] != null)
-            {
-                while (toSort[j + 1] != null)
-                {
-                    if (toSort[j + 1].Compare(toSort[j]) == 1)
-                    { 
-                        temp = toSort[j];
-                        toSort[j] = toSort[j + 1];
-                        toSort[j + 1] = temp;
-                    }
-
-                    j++;
-                }
-
-                j = 0;
-                i++;
-            }
-
-            return toSort;
         }
     }
 }
