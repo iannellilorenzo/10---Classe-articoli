@@ -104,12 +104,7 @@ namespace _10___Classe_articoli
 
         private void ClearBut_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i < num; i++)
-            {
-                articoli[i] = null;
-            }
-
-            num = 1;
+            tutto.Azzera();
         }
 
         private void ArtAlimRadio_CheckedChanged(object sender, EventArgs e)

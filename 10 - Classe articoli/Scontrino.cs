@@ -36,10 +36,10 @@ namespace _10___Classe_articoli
         {
             string ret = "";
 
-            for (int i = 0; i < Articoli.Length; i++)
+            for (int i = 0; i < articoli.Length; i++)
             {
-                if (i == Articoli.Length - 1)
-                    ret += $"[ {Articoli[i]} ]";
+                if (i == articoli.Length - 1)
+                    ret += $"[ {articoli[i]} ]";
                 else
                     ret += $"[ {articoli[i]} ] , ";
             }
@@ -68,6 +68,16 @@ namespace _10___Classe_articoli
         {
             articoli[num] = toAdd;
             num++;
+        }
+
+        public void Azzera()
+        {
+            for (int i = 0; i < articoli.Length; i++)
+            {
+                articoli[i] = null;
+            }
+
+            num = 0;
         }
     }
 }
