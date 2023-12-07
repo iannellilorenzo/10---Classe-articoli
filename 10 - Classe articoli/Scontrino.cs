@@ -79,5 +79,51 @@ namespace _10___Classe_articoli
 
             num = 0;
         }
+
+        public double Totale()
+        {
+            double tot = 0;
+
+            for (int i = 1; i < num; i++)
+            {
+                tot += articoli[i].Sconta();
+            }
+
+            return tot;
+        }
+
+        public void Sort(int leftIndex, int rightIndex)
+        {
+            var i = leftIndex;
+            var j = rightIndex;
+            var pivot = articoli[leftIndex].PrezzoUnit;
+
+            while (i <= j)
+            {
+                while (articoli[i].PrezzoUnit < pivot)
+                {
+                    i++;
+                }
+
+                while (articoli[j].PrezzoUnit > pivot)
+                {
+                    j--;
+                }
+
+                if (i <= j)
+                {
+                    Articolo temp = articoli[i];
+                    articoli[i] = articoli[j];
+                    articoli[j] = temp;
+                    i++;
+                    j--;
+                }
+            }
+
+            if (leftIndex < j)
+                Sort(leftIndex, j);
+            if (i < rightIndex)
+                Sort(i, rightIndex);
+        }
     }
 }
