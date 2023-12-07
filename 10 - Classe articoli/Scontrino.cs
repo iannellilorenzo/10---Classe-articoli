@@ -36,9 +36,9 @@ namespace _10___Classe_articoli
         {
             string ret = "";
 
-            for (int i = 0; i < articoli.Length; i++)
+            for (int i = 0; i < num; i++)
             {
-                if (i == articoli.Length - 1)
+                if (i == num - 1)
                     ret += $"[ {articoli[i]} ]";
                 else
                     ret += $"[ {articoli[i]} ] , ";

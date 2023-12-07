@@ -104,6 +104,7 @@ namespace _10___Classe_articoli
 
         private void ClearBut_Click(object sender, EventArgs e)
         {
+            Display.Clear();
             tutto.Azzera();
         }
 
@@ -166,7 +167,7 @@ namespace _10___Classe_articoli
 
         public void Stampa()
         {
-            tutto.ToString();
+            Display.Items.Add(tutto.ToString());
         }
 
         
