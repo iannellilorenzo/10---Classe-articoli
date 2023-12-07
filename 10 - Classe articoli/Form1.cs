@@ -12,16 +12,15 @@ namespace _10___Classe_articoli
 {
     public partial class Form1 : Form
     {
-        public Articolo[] articoli;
-        public Articolo[] sorted;
+        public Articolo temp;
+        public Scontrino tutto;
         public int num;
 
         public Form1()
         {
             InitializeComponent();
-            articoli = new Articolo[100];
-            sorted = new Articolo[100];
-            articoli[0] = new Articolo(); // head
+            temp = new Articolo();
+            tutto = new Scontrino();
             num = 1;
         }
 
@@ -58,8 +57,8 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloAlimentare(articoli[num - 1].GetHashCode(), date, Desc.Text, prezzo, CartaFedCheck.Checked);
-                num++;
+                temp = new ArticoloAlimentare(0, date, Desc.Text, prezzo, CartaFedCheck.Checked);
+                tutto.Aggiunta(temp);
                 return;
             }
 
@@ -78,8 +77,8 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloAlimentareFresco(articoli[num - 1].GetHashCode(), days, date, Desc.Text, prezzo, CartaFedCheck.Checked);
-                num++;
+                temp = new ArticoloAlimentareFresco(0, days, date, Desc.Text, prezzo, CartaFedCheck.Checked);
+                tutto.Aggiunta(temp);
                 return;
             }
 
@@ -91,8 +90,8 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                articoli[num] = new ArticoloNonAlimentare(articoli[num - 1].GetHashCode(), Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked);
-                num++;
+                temp = new ArticoloNonAlimentare(0, Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked);
+                tutto.Aggiunta(temp);
             }
         }
 
