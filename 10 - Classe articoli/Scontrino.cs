@@ -4,13 +4,13 @@ namespace _10___Classe_articoli
 {
     public class Scontrino
     {
-        private Articolo[] articoli;
+        private Articolo[] _articoli;
         private static int num;
 
         public Articolo[] Articoli
         {
-            get { return articoli; }
-            set { articoli = value; }
+            get { return _articoli; }
+            set { _articoli = value; }
         }
 
         public Scontrino()
@@ -35,9 +35,9 @@ namespace _10___Classe_articoli
             for (int i = 0; i < num; i++)
             {
                 if (i == num - 1)
-                    ret += $"[ {articoli[i]} ]\n";
+                    ret += $"[ {Articoli[i]} ]\n";
                 else
-                    ret += $"[ {articoli[i]} ], \n";
+                    ret += $"[ {Articoli[i]} ], \n";
             }
 
             return ret;
@@ -62,15 +62,15 @@ namespace _10___Classe_articoli
 
         public void Aggiunta(Articolo toAdd)
         {
-            articoli[num] = toAdd;
+            Articoli[num] = toAdd;
             num++;
         }
 
         public void Azzera()
         {
-            for (int i = 0; i < articoli.Length; i++)
+            for (int i = 0; i < Articoli.Length; i++)
             {
-                articoli[i] = null;
+                Articoli[i] = null;
             }
 
             num = 0;
@@ -82,7 +82,7 @@ namespace _10___Classe_articoli
 
             for (int i = 0; i < num; i++)
             {
-                tot += articoli[i].Sconta() * articoli[i].Quantita;
+                tot += Articoli[i].Sconta() * Articoli[i].Quantita;
             }
 
             return tot;
@@ -92,25 +92,25 @@ namespace _10___Classe_articoli
         {
             var i = leftIndex;
             var j = rightIndex;
-            var pivot = articoli[leftIndex].PrezzoUnit;
+            var pivot = Articoli[leftIndex].PrezzoUnit;
 
             while (i <= j)
             {
-                while (articoli[i].PrezzoUnit < pivot)
+                while (Articoli[i].PrezzoUnit < pivot)
                 {
                     i++;
                 }
 
-                while (articoli[j].PrezzoUnit > pivot)
+                while (Articoli[j].PrezzoUnit > pivot)
                 {
                     j--;
                 }
 
                 if (i <= j)
                 {
-                    Articolo temp = articoli[i];
-                    articoli[i] = articoli[j];
-                    articoli[j] = temp;
+                    Articolo temp = Articoli[i];
+                    Articoli[i] = Articoli[j];
+                    Articoli[j] = temp;
                     i++;
                     j--;
                 }
@@ -128,15 +128,15 @@ namespace _10___Classe_articoli
 
             for (int i = 0; i < num; i++)
             {
-                if (toFindOrInc.Equals(articoli[i]) && search)
+                if (toFindOrInc.Equals(Articoli[i]) && search)
                 {
                     ret = i;
                     break;
                 }
 
-                if (toFindOrInc.Equals(articoli[i]) && !search)
+                if (toFindOrInc.Equals(Articoli[i]) && !search)
                 {
-                    articoli[i].Quantita++;
+                    Articoli[i].Quantita++;
                     return -2;
                 }
             }

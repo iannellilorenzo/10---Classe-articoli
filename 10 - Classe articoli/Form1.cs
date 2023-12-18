@@ -69,6 +69,7 @@ namespace _10___Classe_articoli
                 }
 
                 tutto.Aggiunta(temp);
+                num++;
                 return;
             }
 
@@ -96,6 +97,7 @@ namespace _10___Classe_articoli
                 }
 
                 tutto.Aggiunta(temp);
+                num++;
                 return;
             }
 
@@ -112,10 +114,12 @@ namespace _10___Classe_articoli
                 if (tutto.Ricerca(temp, false) == -2)
                 {
                     MessageBox.Show("Articolo già presente, è stata incrementata la sua quantità.");
+                    Stampa();
                     return;
                 }
 
                 tutto.Aggiunta(temp);
+                num++;
             }
         }
 
@@ -196,11 +200,54 @@ namespace _10___Classe_articoli
                 Display.Columns.Add($"{intest[i]}", 120);
             }
 
-            
+            // { "Codice", "Descrizione", "Prezzo unitario", "Carta fedeltà", "Quantità", "Anno di scadenza", "Consumare entro", "Materiale", "Riciclabilità" }
 
+            for (int i = 0; i < num; i++)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = tutto.Articoli[i].Codice.ToString();
+                string str = tutto.Articoli[i].CartaFed ? "Abbonato" : "Non abbonato";
 
+                if (tutto.Articoli[i] is ArticoloNonAlimentare)
+                {
+                    string strr = ((ArticoloNonAlimentare)tutto.Articoli[i]).Riciclabile ? "Riciclabile" : "Non riciclabile";
 
+                    item.SubItems.Add(tutto.Articoli[i].Descrizione);
+                    item.SubItems.Add(tutto.Articoli[i].PrezzoUnit.ToString());
+                    item.SubItems.Add(str);
+                    item.SubItems.Add(tutto.Articoli[i].Quantita.ToString());
+                    item.SubItems.Add("---");
+                    item.SubItems.Add("---");
+                    item.SubItems.Add(((ArticoloNonAlimentare)tutto.Articoli[i]).Materiale);
+                    item.SubItems.Add(strr);
+                }
 
+                if (tutto.Articoli[i] is ArticoloAlimentare)
+                {
+                    item.SubItems.Add(tutto.Articoli[i].Descrizione);
+                    item.SubItems.Add(tutto.Articoli[i].PrezzoUnit.ToString());
+                    item.SubItems.Add(str);
+                    item.SubItems.Add(tutto.Articoli[i].Quantita.ToString());
+                    item.SubItems.Add(((ArticoloAlimentare)tutto.Articoli[i]).Anno.ToString());
+                    item.SubItems.Add("---");
+                    item.SubItems.Add("---");
+                    item.SubItems.Add("---");
+                }
+
+                if (tutto.Articoli[i] is ArticoloAlimentareFresco)
+                {
+                    item.SubItems.Add(tutto.Articoli[i].Descrizione);
+                    item.SubItems.Add(tutto.Articoli[i].PrezzoUnit.ToString());
+                    item.SubItems.Add(str);
+                    item.SubItems.Add(tutto.Articoli[i].Quantita.ToString());
+                    item.SubItems.Add(((ArticoloAlimentareFresco)tutto.Articoli[i]).Anno.ToString());
+                    item.SubItems.Add(((ArticoloAlimentareFresco)tutto.Articoli[i]).PrefCons.ToString());
+                    item.SubItems.Add("---");
+                    item.SubItems.Add("---");
+                }
+
+                Display.Items.Add(item);
+            }
 
             MessageBox.Show($"Il prezzo totale è: €{tutto.Totale()}");
         }
