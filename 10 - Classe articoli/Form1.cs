@@ -57,7 +57,14 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                temp = new ArticoloAlimentare(0, date, Desc.Text, prezzo, CartaFedCheck.Checked);
+                temp = new ArticoloAlimentare(0, date, Desc.Text, prezzo, CartaFedCheck.Checked, 1);
+
+                if (tutto.Ricerca(temp, false) == -2)
+                {
+                    MessageBox.Show("Articolo già presente, è stata incrementata la sua quantità.");
+                    return;
+                }
+
                 tutto.Aggiunta(temp);
                 return;
             }
@@ -77,7 +84,14 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                temp = new ArticoloAlimentareFresco(0, days, date, Desc.Text, prezzo, CartaFedCheck.Checked);
+                temp = new ArticoloAlimentareFresco(0, days, date, Desc.Text, prezzo, CartaFedCheck.Checked, 1);
+
+                if (tutto.Ricerca(temp, false) == -2)
+                {
+                    MessageBox.Show("Articolo già presente, è stata incrementata la sua quantità.");
+                    return;
+                }
+
                 tutto.Aggiunta(temp);
                 return;
             }
@@ -90,7 +104,14 @@ namespace _10___Classe_articoli
                     return;
                 }
 
-                temp = new ArticoloNonAlimentare(0, Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked);
+                temp = new ArticoloNonAlimentare(0, Materiale.Text, RicCheck.Checked, Desc.Text, prezzo, CartaFedCheck.Checked, 1);
+
+                if (tutto.Ricerca(temp, false) == -2)
+                {
+                    MessageBox.Show("Articolo già presente, è stata incrementata la sua quantità.");
+                    return;
+                }
+
                 tutto.Aggiunta(temp);
             }
         }
@@ -167,7 +188,10 @@ namespace _10___Classe_articoli
 
         public void Stampa()
         {
-            Display.Items.Add(tutto.ToString());
+            for (int i = 0; i < num; i++)
+            {
+                Display.Items.Add(tutto.ToString());
+            }
         }
 
         

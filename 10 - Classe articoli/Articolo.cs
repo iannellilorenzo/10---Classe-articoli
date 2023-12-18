@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,15 +9,16 @@ namespace _10___Classe_articoli
 {
     public class Articolo
     {
-        private int _codice = 0;
+        private int _codice;
         private string _descrizione;
         private double _prezzoUnit;
         private bool _cartaFed;
+        private int _quantita;
 
         public int Codice
         {
             get { return _codice; }
-            set { _codice = value / 86438; }
+            set { _codice = GetHashCode(); }
         }
 
         public string Descrizione
@@ -43,20 +45,28 @@ namespace _10___Classe_articoli
             set { _cartaFed = value; }
         }
 
+        public int Quantita
+        {
+            get { return _quantita; }
+            set { _quantita = value; }
+        }
+
         public Articolo()
         {
             Codice += 1;
             Descrizione = "";
             PrezzoUnit = 0;
             CartaFed = false;
+            Quantita = 0;
         }
 
-        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed)
+        public Articolo(int codice, string descrizione, double prezzoUnit, bool cartaFed, int quantita)
         {
             Codice = codice;
             Descrizione = descrizione;
             PrezzoUnit = prezzoUnit;
             CartaFed = cartaFed;
+            Quantita = quantita;
         }
 
         public Articolo(Articolo vecchioArt)
@@ -65,12 +75,18 @@ namespace _10___Classe_articoli
             Descrizione = vecchioArt.Descrizione;
             PrezzoUnit = vecchioArt.PrezzoUnit;
             CartaFed = vecchioArt.CartaFed;
+            Quantita = vecchioArt.Quantita;
         }
 
         public override string ToString()
         {
             string str = CartaFed ? "Abbonato" : "Non abbonato";
-            return $"Codice: {Codice}; Descrizione: {Descrizione}; Prezzo Unitario: {PrezzoUnit}; Carta Fedeltà: {str}";
+            return $"Codice: {Codice}; Descrizione: {Descrizione}; Prezzo Unitario: {PrezzoUnit}; Carta Fedeltà: {str}; Quantità: {Quantita}";
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode() / 86438;
         }
 
         public override bool Equals(object obj)
@@ -82,7 +98,7 @@ namespace _10___Classe_articoli
 
             Articolo other = (Articolo)obj;
             
-            if (Codice == other.Codice && Descrizione == other.Descrizione && PrezzoUnit == other.PrezzoUnit && CartaFed == other.CartaFed)
+            if (Descrizione == other.Descrizione && PrezzoUnit == other.PrezzoUnit && CartaFed == other.CartaFed && Quantita == other.Quantita)
             {
                 return true;
             }

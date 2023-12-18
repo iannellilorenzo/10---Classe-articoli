@@ -27,7 +27,7 @@ namespace _10___Classe_articoli
             PrefCons = 3;
         }
 
-        public ArticoloAlimentareFresco(int codice, int prefCons, int anno, string descrizione, double prezzoUnit, bool cartaFed) : base(codice, anno, descrizione, prezzoUnit, cartaFed)
+        public ArticoloAlimentareFresco(int codice, int prefCons, int anno, string descrizione, double prezzoUnit, bool cartaFed, int quant) : base(codice, anno, descrizione, prezzoUnit, cartaFed, quant)
         {
             PrefCons = prefCons;
         }

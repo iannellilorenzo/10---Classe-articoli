@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.InteropServices;
 
 namespace _10___Classe_articoli
 {
     public class Scontrino
     {
         private Articolo[] articoli;
-        private static int num = 0;
+        private static int num;
 
         public Articolo[] Articoli
         {
@@ -39,9 +35,9 @@ namespace _10___Classe_articoli
             for (int i = 0; i < num; i++)
             {
                 if (i == num - 1)
-                    ret += $"[ {articoli[i]} ]";
+                    ret += $"[ {articoli[i]} ]\n";
                 else
-                    ret += $"[ {articoli[i]} ] , ";
+                    ret += $"[ {articoli[i]} ], \n";
             }
 
             return ret;
@@ -84,9 +80,9 @@ namespace _10___Classe_articoli
         {
             double tot = 0;
 
-            for (int i = 1; i < num; i++)
+            for (int i = 0; i < num; i++)
             {
-                tot += articoli[i].Sconta();
+                tot += articoli[i].Sconta() * articoli[i].Quantita;
             }
 
             return tot;
@@ -124,6 +120,28 @@ namespace _10___Classe_articoli
                 Sort(leftIndex, j);
             if (i < rightIndex)
                 Sort(i, rightIndex);
+        }
+
+        public int Ricerca(Articolo toFindOrInc, bool search)
+        {
+            int ret = -1;
+
+            for (int i = 0; i < num; i++)
+            {
+                if (toFindOrInc.Equals(articoli[i]) && search)
+                {
+                    ret = i;
+                    break;
+                }
+
+                if (toFindOrInc.Equals(articoli[i]) && !search)
+                {
+                    articoli[i].Quantita++;
+                    return -2;
+                }
+            }
+
+            return ret;
         }
     }
 }
