@@ -141,16 +141,17 @@
             // 
             // Display
             // 
+            this.Display.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.Display.AllowDrop = true;
             this.Display.Font = new System.Drawing.Font("Consolas", 8.25F);
-            this.Display.HideSelection = false;
-            this.Display.Location = new System.Drawing.Point(29, 306);
+            this.Display.GridLines = true;
+            this.Display.Location = new System.Drawing.Point(13, 302);
             this.Display.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Display.Name = "Display";
-            this.Display.Size = new System.Drawing.Size(1139, 245);
+            this.Display.Size = new System.Drawing.Size(1492, 245);
             this.Display.TabIndex = 8;
             this.Display.UseCompatibleStateImageBehavior = false;
-            this.Display.View = System.Windows.Forms.View.List;
+            this.Display.View = System.Windows.Forms.View.Details;
             // 
             // AnnoLabel
             // 
@@ -269,7 +270,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1654, 560);
+            this.ClientSize = new System.Drawing.Size(1518, 560);
             this.Controls.Add(this.OrdBut);
             this.Controls.Add(this.ClearBut);
             this.Controls.Add(this.ScontBut);

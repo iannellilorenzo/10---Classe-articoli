@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,13 +16,15 @@ namespace _10___Classe_articoli
         public Articolo temp;
         public Scontrino tutto;
         public int num;
+        public string[] intest;
 
         public Form1()
         {
             InitializeComponent();
             temp = new Articolo();
             tutto = new Scontrino();
-            num = 1;
+            num = 0;
+            intest = new string[] { "Codice", "Descrizione", "Prezzo unitario", "Carta fedeltà", "Quantità", "Anno di scadenza", "Consumare entro", "Materiale", "Riciclabilità" };
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -120,7 +123,6 @@ namespace _10___Classe_articoli
         {
             Display.Clear();
             Stampa();
-            Display.Items.Add($"Il prezzo totale è: €{tutto.Totale()}");
         }
 
         private void ClearBut_Click(object sender, EventArgs e)
@@ -183,15 +185,24 @@ namespace _10___Classe_articoli
             Display.Clear();
             tutto.Sort(0, num);
             Stampa();
-            Display.Items.Add($"Il prezzo totale è: €{tutto.Totale()}");
         }
 
         public void Stampa()
         {
-            for (int i = 0; i < num; i++)
+            Display.Clear();
+
+            for (int i = 0; i < intest.Length; i++)
             {
-                Display.Items.Add(tutto.ToString());
+                Display.Columns.Add($"{intest[i]}", 120);
             }
+
+            
+
+
+
+
+
+            MessageBox.Show($"Il prezzo totale è: €{tutto.Totale()}");
         }
 
         
